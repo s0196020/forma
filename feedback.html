@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="container">
+        <h1>8 задание</h1>
+        <p>Форма и данные</p>
+        
+        <!-- Кнопка открытия формы -->
+        <button id="feedbackBtn" class="feedback-btn">
+            Обратная связь
+        </button>
+        
+        <!-- Popup окно с формой -->
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Обратная связь</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                
+                <form id="feedbackForm" class="modal-form">
+                    <!-- Сообщения -->
+                    <div id="formMessage" class="form-message"></div>
+                    
+                    <!-- Поля формы -->
+                    <div class="form-group">
+                        <label for="fullName">ФИО *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                          <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" 
+                    pattern="[0-9+]{10,15}" 
+                    title="Только цифры и символы + - ( )"
+                    required>
+                <br><br>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organization">Организация</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                        <label for="privacyPolicy">
+                            Согласен(а) с политикой обработки персональных данных *
+                        </label>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">Отправить</button>
+                        <button type="button" class="btn-cancel">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="feedback.js"></script>
+</body>
+</html>
